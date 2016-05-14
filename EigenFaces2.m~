@@ -1,0 +1,12 @@
+dataMat = load('olivettifaces.mat');
+
+numOfEigensRequired = 399;
+
+facesMat = dataMat.faces;
+
+[eigenVectors, eigenValues, meanFace] = pc_evectors(facesMat,10);
+colormap(gray(256))
+imagesc(reshape(meanFace,[64 64]));
+
+OrigImg = facesMat(:,20);
+imagesc(reshape(OrigImg),[64 64
